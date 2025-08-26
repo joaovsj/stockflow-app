@@ -11,4 +11,9 @@ export const routes: Routes = [
         path: 'login',
         loadComponent: () => import('./auth/login/login.component')
     },
+    {
+        path: '**',
+        title: 'Not Found',
+        loadComponent: () => import('')
+    }
 ];
