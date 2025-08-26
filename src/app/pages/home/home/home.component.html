@@ -1,0 +1,18 @@
+<app-sidebar />
+<app-header titulo="Home" icon="house-solid.svg"/>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 d-flex align-items-center justify-content-center" style="height: 50vh;">
+            <h1 class="ms-5">StockFlow <fa-icon [icon]="parachute"></fa-icon></h1>
+        </div>
+        <div class="col-12 text-center">
+            <button class="btn btn-danger me-3" (click)="openAddModal()">
+                Adicionar Produto ao Estoque   
+            </button>
+            <button class="btn btn-danger" (click)="openRemoveModal()">
+                Retirar Produto do Estoque   
+            </button>
+        </div>
+    </div>
+</div>
+

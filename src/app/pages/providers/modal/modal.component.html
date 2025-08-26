@@ -1,0 +1,84 @@
+<div class="p-4 rounded bg-light" style="min-width: 40vw; transform: translateX(-5vw);">
+    <div class="modal-header p-2 ">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar Fornecedor</h5>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="modalRef.close()"
+        ></button>
+    </div>
+    <div class="modal-body px-2">
+
+        <form [formGroup]="form" class="d-flex flex-column gap-3 position-relative" style="height: min-content;">
+            <div formGroupName="provider">
+
+                <mdb-form-control class="mb-3">
+                  <input formControlName="name" mdbInput type="text" id="name" class="form-control"/>
+                  <label mdbLabel class="form-label" for="name">Nome do Fornecedor</label>
+                </mdb-form-control>
+    
+                <mdb-form-control class="mb-3">
+                    <input formControlName="document" mdbInput type="text" id="document" class="form-control" mask="CPF_CNPJ"/>
+                    <label mdbLabel class="form-label" for="document">CPF (Opcional) </label>
+                </mdb-form-control>
+
+                <div class="col d-flex gap-3">
+                    <mdb-form-control [className]="'w-100'">
+                        <input formControlName="email" mdbInput type="text" id="email" class="form-control"/>
+                        <label mdbLabel class="form-label" for="email">Email</label>
+                    </mdb-form-control>
+        
+                    <mdb-form-control [className]="'w-100'">
+                        <input formControlName="cellphone" mdbInput type="text" id="cellphone" mask="(00) 0000-0000||(00) 00000-0000" class="form-control"/>
+                        <label mdbLabel class="form-label" for="cellphone">Celular/telefone</label>
+                    </mdb-form-control>
+                </div>
+            </div>
+
+            <div formGroupName="address">
+                <div class="col d-flex gap-3 mb-3">  
+                    <mdb-form-control>
+                        <input formControlName="cep" mdbInput type="text" id="cep" class="form-control" mask="00000-000"/>
+                        <label mdbLabel class="form-label" for="cep">CEP</label>
+                    </mdb-form-control>
+    
+                    <mdb-form-control [className]="'w-100'">
+                        <input formControlName="street" mdbInput type="text" id="street" class="form-control"/>
+                        <label mdbLabel class="form-label" for="street">Rua</label>
+                    </mdb-form-control>
+    
+                    <mdb-form-control [className]="'w-50'">
+                        <input formControlName="number" mdbInput type="text" id="number" class="form-control"/>
+                        <label mdbLabel class="form-label" for="number">Número</label>
+                    </mdb-form-control>
+                </div>
+    
+                <div class="col d-flex gap-3">
+                    <mdb-form-control>
+                        <input formControlName="neighborhood" mdbInput type="text" id="neighborhood" class="form-control"/>
+                        <label mdbLabel class="form-label" for="neighborhood">Bairro</label>
+                      </mdb-form-control>
+                      <mdb-form-control>
+                        <input formControlName="city" mdbInput type="text" id="city" class="form-control"/>
+                        <label mdbLabel class="form-label" for="city">Cidade</label>
+                      </mdb-form-control>
+                      <mdb-form-control>
+                        <input formControlName="state" mdbInput type="text" id="state" class="form-control"/>
+                        <label mdbLabel class="form-label" for="state">Estado</label>
+                      </mdb-form-control>
+                </div>    
+            </div>
+        </form>
+        
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-danger" (click)="modalRef.close()" mdbRipple>
+          Fechar
+        </button>
+        <button type="button" class="btn btn-success" (click)="postProvider()" [disabled]="sending" mdbRipple>Adicionar</button>
+    </div>
+</div>

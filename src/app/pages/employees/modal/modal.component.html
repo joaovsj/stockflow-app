@@ -1,0 +1,60 @@
+<div class="p-4 rounded bg-light" style="min-width: 40vw">
+    <div class="modal-header p-2">
+        <h5 class="modal-title" id="exampleModalLabel">{{ this.id ? 'Atualizar': 'Adicionar' }}</h5>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="modalRef.close()"
+        ></button>
+    </div>
+    <div class="modal-body px-2">
+
+        <form [formGroup]="user" class="d-flex flex-column gap-3 position-relative" style="height: min-content;">
+
+            <mdb-form-control>
+              <input mdbInput type="text" id="name" class="form-control" formControlName="name"/>
+              <label mdbLabel class="form-label" for="name">Nome do Usuário</label>
+            </mdb-form-control>
+
+            <div class="col d-flex gap-3">
+                <mdb-form-control>
+                    <input mdbInput type="text" id="rm" formControlName="rm" class="form-control"/>
+                    <label mdbLabel class="form-label" for="rm">RM</label>
+                  </mdb-form-control>
+                
+
+                <select class="form-control form-select shadow-none py-1 bg-transparent" id="floatingSelect" formControlName="role" aria-label="Floating label select example">
+                    <option selected value="">Cargo</option>
+                    <option value="Admin">Administrador</option>
+                    <option value="Funcionario">Funcionário</option>
+                </select>
+            </div>
+            
+            <mdb-form-control>
+                <input mdbInput type="email" id="email" class="form-control" formControlName="email"/>
+                <label mdbLabel class="form-label" for="email">E-mail</label>
+              </mdb-form-control>
+      
+            <mdb-form-control>
+                <input mdbInput type="password" id="password" class="form-control" formControlName="password"/>
+                <label mdbLabel class="form-label" for="password">Senha</label>
+            </mdb-form-control>
+
+            <mdb-form-control>
+                <input mdbInput type="password" id="cpassword" class="form-control" />
+                <label mdbLabel class="form-label" for="cpassword">Confirmar Senha</label>
+            </mdb-form-control>
+        </form>
+        
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-danger" (click)="modalRef.close()" mdbRipple>
+          Fechar
+        </button>
+        <button type="button" class="btn btn-success" mdbRipple [disabled]="sending" (click)="postItem()">{{ this.id ? 'Atualizar': 'Adicionar' }}</button>
+    </div>
+</div>

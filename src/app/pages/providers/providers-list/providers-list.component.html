@@ -1,0 +1,59 @@
+<app-confirm 
+    (confirm)="deleteItems($event)"
+/>
+<app-sidebar />
+<app-header titulo="Fornecedores" icon="truck-fast-solid.svg" />
+
+<div class="container-fluid">
+    <div class="row justify-content-center mt-5">
+        <div class="col-11 d-flex align-items-center" routerLink="/home">
+            <i class="bi bi-arrow-left-short fs-4"></i>
+            <a href="">Voltar</a>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center my-3">
+        <div class="col-11 bg-white p-3 shadow rounded">
+            <div class="row ">
+                <div class="col">
+                    <mdb-form-control>
+                        <input mdbInput type="email" id="form1Example1" class="form-control" name="name" [(ngModel)]="name"/>
+                        <label mdbLabel class="form-label" for="form1Example1">Nome do Fornecedor</label>
+                    </mdb-form-control>
+                </div>
+
+                <div class="col">
+                    <mdb-form-control>
+                        <input mdbInput type="text" id="form1Example1" class="form-control" name="Documento" mask="CPF_CNPJ" [(ngModel)]="doc"/>
+                        <label mdbLabel class="form-label" for="form1Example1">Documento do Fornecedor</label>
+                    </mdb-form-control>
+                </div>
+
+                <div class="col-2 p-0">
+                    <button type="button" class="btn btn-danger w-100" mdbRipple (click)="searchItems()">Pesquisar</button>
+                </div>
+                <div class="col-auto text-center">
+                    <div class="row">
+                        <div class="col-5">
+                            <button type="button" class="btn btn-danger btn-floating" (click)="openAddModal()" mdbRipple><i class="bi bi-plus fs-5"></i></button>
+                        </div>
+                        <div class="col-5">
+                            <button type="button" class="btn btn-danger btn-floating" (click)="openDeleteModal()" mdbRipple><i class="bi bi-trash-fill"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <app-table 
+        [headers]="headers"
+        [data]="providers"
+        [indexes]="indexes"
+        [resetItemsToDelete]="resetList"
+        (itemsToDelete)="getItemsToDelete($event)"
+        
+        (id)="edit($event)"
+    />
+
+</div>

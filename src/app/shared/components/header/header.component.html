@@ -1,0 +1,23 @@
+<header class="w-100 p-3 d-flex justify-content-between border-bottom ps-5" >
+    <div class="d-flex gap-2 ps-4" style="width: min-content;">
+        <span style="margin-top: 10px;">
+            <img src="assets/icons/sidebar/{{icon}}" alt="" width="22px" height="24px">
+        </span>
+        <h4 class="text-nowrap my-auto fw-bold">{{ titulo }}</h4>
+    </div>
+    <div class="position-relative d-flex gap-2 pe-2">
+        <div class="d-flex flex-column justify-content-center">
+            <p class="m-0 p-0 fw-bold">{{ name }}</p>
+            <p class="m-0 p-0">{{ role }}</p>
+        </div>
+
+        <a routerLink="/perfil">
+            <div class="d-flex align-items-center justify-content-center" style="width: 50px;">   
+                <span class="rounded-circle p-2 h-100 w-100 bg-primary">
+                    <img src="assets/icons/user-solid.svg" alt=""  width="32px" height="34px">
+                </span>    
+            </div>
+        </a>
+
+    </div>
+</header>

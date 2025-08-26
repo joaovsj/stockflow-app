@@ -1,0 +1,38 @@
+<div class="position-fixed p-3 h-100 sidenav">
+    <nav class="d-flex flex-column gap-4" style="margin-top: 10vh;">
+
+        @for (icon of icons; track $index; 
+            let l = $last
+        ) {
+            <a routerLink="{{ icon.address }}">
+                <img 
+                    [src]="icon.src" 
+                    [alt]="icon.alt" 
+                    width="22px" 
+                    height="24px"
+                    
+
+                    mdbTooltip="{{ icon.alt }}"
+                    placement="right"
+                >        
+            </a>
+        }
+        <a (click)="logout()" routerLink="">
+            <img 
+                [src]="'assets/icons/sidebar/arrow-right-from-bracket-solid.svg'" 
+                [alt]="'Sair'" 
+                [class.last]="true"
+                width="22px" 
+                height="24px"
+                
+
+                mdbTooltip="Sair"
+                placement="right"
+            >        
+        </a>        
+    </nav>
+</div>
+
+
+
+

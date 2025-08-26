@@ -1,0 +1,88 @@
+<div class="p-4 rounded">
+    <div class="modal-header p-2">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar Produto</h5>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="modalRef.close()"
+        ></button>
+    </div>
+    <div class="modal-body px-2">
+
+
+        <form [formGroup]="product" class="d-flex flex-column gap-3 position-relative" style="height: min-content;">
+
+            <mdb-form-control>
+              <input mdbInput type="text" id="form1Example1" class="form-control" formControlName="name" placeholder="{{ name.value }}"/>
+              <label mdbLabel class="form-label" for="form1Example1">Nome do Produto </label>
+            </mdb-form-control>
+          
+            <div class="col d-flex gap-2">
+                <select class="form-control form-select shadow-none py-1" id="floatingSelect" aria-label="Floating label select example" formControlName="category_id" placeholder="">
+                    <option selected value="null">Categoria</option>
+
+                    @for (category of categories; track $index) {
+                        <option value="{{ category.id }}"> {{ category.name }}</option>
+                    }
+                </select>
+
+
+                <select class="form-control form-select shadow-none py-1" id="floatingSelect" aria-label="Floating label select example" formControlName="unity_id">
+                    <option selected value="null">Unidade</option>
+
+                    @for (unity of unities; track $index) {
+                        <option value="{{ unity.id }}" > {{ unity.name }}</option>
+                    }
+                </select>
+            </div>
+
+
+            <select class="form-control form-select shadow-none py-1" id="floatingSelect" aria-label="Floating label select example" formControlName="provider_id">
+                <option selected value="null">Fornecedor</option>
+
+                @for (provider of providers; track $index) {
+                    <option value="{{ provider.id }}">{{ provider.name }}</option>
+                }
+            </select>
+        
+            <div class="col d-flex gap-2">
+        
+                <mdb-form-control>
+                    <input mdbInput type="text" id="form1Example1" class="form-control" formControlName="minimum" placeholder="{{ minimum.value }}" />
+                    <label mdbLabel class="form-label" for="form1Example1">Estoque Mínimo</label>
+                </mdb-form-control>
+
+            <mdb-form-control>
+                <input mdbInput type="text" id="form1Example1" class="form-control" formControlName="maximum" placeholder="{{ maximum.value }}"/>
+                <label mdbLabel class="form-label" for="form1Example1">Estoque Máximo</label>
+              </mdb-form-control>
+            </div>
+
+            <mdb-form-control>
+                <input mdbInput type="text" id="form1Example1" class="form-control" formControlName="quantity" placeholder="{{ quantity.value }}">
+                <label mdbLabel class="form-label" for="form1Example1">Quantidade </label>
+            </mdb-form-control>
+            
+        </form>
+        
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-danger" (click)="modalRef.close()" mdbRipple>
+          Fechar
+        </button>
+        <button 
+            type="button" 
+            class="btn btn-success" 
+            mdbRipple (click)="register()" 
+            [disabled]="spinner"
+            >
+            
+            {{ this.productId ? 'Atualizar' : 'Cadastrar' }}
+
+        </button>
+    </div>
+</div>

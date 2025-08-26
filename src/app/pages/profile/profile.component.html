@@ -1,0 +1,103 @@
+<app-sidebar />
+
+<app-header titulo="Perfil" icon="chart-pie-solid.svg"/>
+
+<div class="container-fluid p-0 h-100"> 
+    <div class="row mb-5 d-flex align-items-center justify-content-center" style="height: 80vh;">
+        <div class="col-6 offset-3">
+            <div class="px-5 pt-4 shadow rounded-5 bg-light">
+                <h2 class="mb-4 ">Atualizar dados</h2>    
+                <form [formGroup]="form">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <div class="col">
+                        <mdb-form-control>
+                            <input mdbInput type="text" id="name" formControlName="name" class="form-control" />
+                            <label mdbLabel class="form-label" for="name">Nome</label>
+                        </mdb-form-control>
+                        </div>
+                        <div class="col">
+                        <mdb-form-control class="form-outline">
+                            <input mdbInput type="text" id="email" formControlName="email" class="form-control" />
+                            <label mdbLabel class="form-label" for="email">Email</label>
+                        </mdb-form-control>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-4">
+                        <div class="col">
+                        <mdb-form-control>
+                            <input 
+                                mdbInput
+                                class="form-control"
+                                id="formControlDisabled"
+                                type="text"
+                                placeholder="Disabled input"
+                                aria-label="disabled input example"
+                                
+                            mdbInput type="text" id="role" class="form-control" formControlName="role"/>
+                            <label mdbLabel class="form-label" for="role">Cargo</label>
+                        </mdb-form-control>
+                        </div>
+                        <div class="col">
+                        <mdb-form-control class="form-outline">
+                            <input mdbInput type="text" id="rm" formControlName="rm" class="form-control" />
+                            <label mdbLabel class="form-label" for="rm">RM</label>
+                        </mdb-form-control>
+                        </div>
+                    </div>
+
+                    @if(changePassword){
+                        <mdb-form-control class="mb-4">
+                            <input mdbInput type="email" id="password" class="form-control" />
+                            <label mdbLabel class="form-label" for="password">Senha</label>
+                        </mdb-form-control>
+                        
+                        <mdb-form-control class="mb-4">
+                            <input mdbInput type="password" id="cpassword" class="form-control" />
+                            <label mdbLabel class="form-label" for="cpassword">Confirmar Senha</label>
+                        </mdb-form-control>
+                    }
+                    <div class="form-check">
+                        <input
+                        mdbCheckbox
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                        (change)="changePassword = !changePassword"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                        Trocar Senha?
+                        </label>
+                    </div>
+                    
+
+
+                    <div class="d-flex justify-content-end gap-2">                
+                        <button mdbRipple type="button" class="btn btn-secondary text-danger mb-4" >Cancelar</button> 
+                     
+                        <button mdbRipple type="button" class="btn btn-success mb-4">Salvar</button> 
+                    </div>  
+                
+                </form>
+            </div>
+        </div>
+        <div class="col-3 h-75">
+            <div class="d-flex align-items-center justify-content-center">   
+                <span class="rounded-circle p-2 h-100 bg-primary p-4">
+                    @if(image){
+                        <img src="{{image}}" alt="text"  width="200px" height="200px" class="rounded-circle">
+                    }@else {
+                        <img src="assets/icons/user-solid.svg" alt=""  width="52px" height="54px">
+                    }
+                </span>    
+            </div>
+            <div class="text-center h-50">
+                <label class="form-label" for="customFile">Default file input example</label>
+                <input #imageInput type="file" class="form-control" id="customFile" accept="image/*" (change)="changeInputFile(imageInput)"/>
+            </div>
+        </div>
+    </div>
+</div>

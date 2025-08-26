@@ -1,0 +1,74 @@
+<div class="p-4 rounded">
+    <div class="modal-header p-2">
+        <h5 class="modal-title" id="exampleModalLabel">Remover Produto</h5>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="modalRef.close()"
+        ></button>
+    </div>
+    <div class="modal-body px-2">
+
+
+        <form class="d-flex flex-column gap-3 position-relative" style="height: min-content;" [formGroup]="movement">
+
+            <mdb-form-control>
+              <input #product mdbInput type="text" id="name" class="form-control" list="products" formControlName="product_id" (change)="select_product(product)"/>
+              <label mdbLabel class="form-label" for="name">Nome do Produto</label>
+              <datalist id="products">
+                @for(product of products; track $index){
+                    <option [value]="product.id">{{product.name}} - {{ product.provider }}</option>
+                }
+              </datalist>
+            </mdb-form-control>
+          
+            <mdb-form-control>
+                <input mdbInput type="number" id="quantity" class="form-control" formControlName="quantity"/>
+                <label mdbLabel class="form-label" for="quantity">Quantidade</label>
+              </mdb-form-control>
+            
+
+            <div class="col">
+                <select class="form-control form-select shadow-none py-1" id="employee" formControlName="user_id" aria-label="Floating label select example" readonly>
+                    <option value="null">Responsável</option>
+                    @for(employee of employees; track $index){
+                        <option [value]="employee.id">{{ employee.name }}</option>
+                    }
+                </select>
+            </div>
+
+            <mdb-form-control>
+                <input mdbInput type="datetime-local" id="date" class="form-control" formControlName="created_at"/>
+                <label mdbLabel class="form-label" for="date">Data</label>
+            </mdb-form-control>  
+            
+
+            <div class="form-check">
+                <input
+                mdbCheckbox
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                [checked]="true"
+                (change)="changeDate()"
+                />
+                <label class="form-check-label" for="flexCheckChecked">
+                Usar data e hora atual
+                </label>
+            </div>
+            
+        </form>
+        
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary text-danger" (click)="modalRef.close()" mdbRipple>
+          Fechar
+        </button>
+        <button type="button" class="btn btn-success" mdbRipple (click)="removeMovement()">Adicionar</button>
+    </div>
+</div>

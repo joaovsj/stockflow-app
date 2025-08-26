@@ -1,0 +1,18 @@
+:host{
+    
+    .allContent{
+        background-image: url(./../../../assets/img/background-fatec.png);
+        background-size: cover;
+
+        .box-form{
+            width: 400px;
+
+            input{
+                width: 100% !important;
+            }
+        }
+        
+    }
+
+
+}
