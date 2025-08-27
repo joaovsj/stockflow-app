@@ -2,14 +2,14 @@
 
 These website brings the main features of a Stock such as register of products, categories, providers, users, movements, etc. However, the backend was developed using Laravel and it is alocatted in another repository. In addition to use properly please visit it [here.](https://github.com/joaovsj/stockflow-api) <br><br>
 
-<h2 id="colab">Technologies 🚀 </h2>
+## Technologies 🚀 
 
 - Angular 17
 - Node.js 20+
 - Docker
 - Nginx
 
-<h2 id="colab">Installation 🛠️ </h2>
+## Installation 🛠️ 
 
 You can run it locally installing the dependencies.
 
@@ -22,7 +22,20 @@ Once you have installed the dependencies is just execute with ng.
 ng serve -o
 ```
 
-<h2 id="colab">Collaborators 🤝 </h2>
+## Installing through Docker 🐋
+
+Building the image... 
+
+```bash
+docker build -t stockflow-app .
+```
+
+Running the container
+```bash
+docker run -d -p 8080:80 stockflow-app
+```
+
+## Collaborators 🤝 
 
 All the features of the app and API was developed in partneship with [Carlos Vinicius](https://github.com/Vviniciuss13) since the beginning. 
 
