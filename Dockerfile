@@ -1,10 +1,11 @@
 FROM node:20 AS build
 WORKDIR /app
 COPY package*.json ./
+COPY mdb-angular-ui-kit-6.1.0.tgz ./    
 RUN npm install
 RUN npm install -g @angular/cli
 COPY . .
-RUN ng build --prod
+RUN ng build --configuration production
 
 FROM nginx:latest
 COPY --from=build app/dist/stockflow-app /usr/share/nginx/html
