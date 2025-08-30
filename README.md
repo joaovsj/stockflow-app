@@ -24,15 +24,9 @@ ng serve -o
 
 ## Installing through Docker 🐋
 
-Building the image... 
-
-```bash
-docker build -t stockflow-app .
-```
-
 Running the container
 ```bash
-docker run -d -p 8080:80 stockflow-app
+docker run -d -p 8080:80 joaovsj/stockflow-app
 ```
 
 ## Collaborators 🤝 
