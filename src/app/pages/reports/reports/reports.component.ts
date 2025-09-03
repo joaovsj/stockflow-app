@@ -21,7 +21,7 @@ import { EmployeeService }  from '@services/employee.service';
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [SidebarComponent, HeaderComponent, MdbFormsModule, ReactiveFormsModule, MdbRippleModule, TableComponent],
+  imports: [SidebarComponent, HeaderComponent, MdbFormsModule, ReactiveFormsModule, MdbRippleModule],
   templateUrl: './reports.component.html',
   styleUrl: './reports.component.scss'
 })

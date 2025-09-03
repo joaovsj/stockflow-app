@@ -1,6 +1,6 @@
 # Stockflow 📦
 
-These website brings the main features of a Stock such as register of products, categories, providers, users, movements, etc. However, the backend was developed using Laravel and it is alocatted in another repository. In addition to use properly please visit it [here.](https://github.com/joaovsj/stockflow-api) <br><br>
+These website brings the main features of a Stock such as register of products, categories, providers, users, movements, etc. However, the backend was developed using Laravel and it is alocatted in another repository. In addition to use properly please visit it [**here.**](https://github.com/joaovsj/stockflow-api) You can also see the image Docker available on [**Docker hub.**](https://hub.docker.com/r/joaovsj/stockflow-app)<br><br>
 
 ## Technologies 🚀 
 
@@ -24,15 +24,13 @@ ng serve -o
 
 ## Installing through Docker 🐋
 
-Building the image... 
-
-```bash
-docker build -t stockflow-app .
-```
-
 Running the container
 ```bash
-docker run -d -p 8080:80 stockflow-app
+docker run -d -p 8080:80 joaovsj/stockflow-app
+```
+Or run the command in your terminal. 
+```
+docker compose up
 ```
 
 ## Collaborators 🤝 
