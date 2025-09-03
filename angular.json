@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "mdb-angular-ui-kit-free:build:production"
+              "buildTarget": "stockflow-app:build:production"
             },
             "development": {
-              "buildTarget": "mdb-angular-ui-kit-free:build:development"
+              "buildTarget": "stockflow-app:build:development"
             }
           },
           "defaultConfiguration": "development"
