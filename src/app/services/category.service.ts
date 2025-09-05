@@ -15,6 +15,6 @@ export class CategoryService extends ServiceService{
     cookie: CookieService
   ) { 
     super(http, cookie)
-    this.endPoint = 'category'
+    this.endPoint = 'categories'
   }
 }
