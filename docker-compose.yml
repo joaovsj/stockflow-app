@@ -1,8 +1,7 @@
 version: "3.8"
 services: 
   stockflow-app:  
-    build: . 
-    container_name: stockflow-app
+    image: joaovsj/stockflow-app:2.0
     ports: 
       - "8080:80" 
     restart: always
