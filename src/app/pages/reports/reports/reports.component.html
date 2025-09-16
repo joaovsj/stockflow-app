@@ -103,8 +103,8 @@
                                 <tr>
                                     <td>{{ product.name }}</td>
                                     <td>{{ product.quantity }}</td>
-                                    <td>R$ {{ product.price }}</td>
-                                    <td>R$ {{ product.price * product.quantity}}</td>
+                                    <td>{{ product.price | currency:'BRL':'symbol':'1.2-2' }}</td>
+                                    <td>{{ product.price * product.quantity | currency:'BRL':'symbol':'1.2-2' }}</td>
                                 </tr>
                             } @empty {
                                 <p class="my-5 fs-5 text-center">Nenhum registro encontrado...</p>

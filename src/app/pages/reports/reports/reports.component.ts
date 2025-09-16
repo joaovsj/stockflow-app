@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CurrencyPipe } from '@angular/common';
 
 // MDBootstrap
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
@@ -21,7 +22,7 @@ import { EmployeeService }  from '@services/employee.service';
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [SidebarComponent, HeaderComponent, MdbFormsModule, ReactiveFormsModule, MdbRippleModule],
+  imports: [SidebarComponent, HeaderComponent, MdbFormsModule, ReactiveFormsModule, MdbRippleModule, CurrencyPipe],
   templateUrl: './reports.component.html',
   styleUrl: './reports.component.scss'
 })
