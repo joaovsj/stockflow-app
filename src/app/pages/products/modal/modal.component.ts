@@ -31,11 +31,12 @@ export class ModalComponent {
   public  providers  = [];
   public  notyf:  Notyf;
   public  spinner: boolean = false;
-  public productId: string;
+  public  productId: string;
   
   // Form's fields
   public product = new FormGroup({
     name:         new FormControl(null, Validators.required),
+    price:        new FormControl(null, Validators.required),
     category_id:  new FormControl(null, Validators.required),
     unity_id:     new FormControl(null, Validators.required),
     provider_id:  new FormControl(null, Validators.required),
@@ -83,6 +84,7 @@ export class ModalComponent {
         delete data.body.id;
         this.product.setValue({
           name:         data.body.name,
+          price:        data.body.price,
           category_id:  data.body.category_id,
           unity_id:     data.body.unity_id,
           provider_id:  data.body.provider_id,
