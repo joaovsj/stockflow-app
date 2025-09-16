@@ -94,7 +94,8 @@
                             <tr class="text-light">
                                 <th class="text-capitalize">Nome</th>
                                 <th class="text-capitalize">Quantidade</th>
-                                <th class="text-capitalize">Preço</th>
+                                <th class="text-capitalize">Preço Unitário</th>
+                                 <th class="text-capitalize">Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -102,7 +103,8 @@
                                 <tr>
                                     <td>{{ product.name }}</td>
                                     <td>{{ product.quantity }}</td>
-                                    <td> R$ {{ product.price }}</td>
+                                    <td>R$ {{ product.price }}</td>
+                                    <td>R$ {{ product.price * product.quantity}}</td>
                                 </tr>
                             } @empty {
                                 <p class="my-5 fs-5 text-center">Nenhum registro encontrado...</p>

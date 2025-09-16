@@ -6,3 +6,10 @@ h1{
 img{
     width: calc(50px + 5vmax);
 }
+
+.icone{
+    font-size: 10vh;
+    color: #000;
+    transition: 8s;
+    transform: translateY(-50px);
+}

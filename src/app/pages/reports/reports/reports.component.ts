@@ -214,8 +214,6 @@ export class ReportsComponent implements OnInit {
         console.log(error)
         
       }
-    })
-  
-    
+    })  
   }
 }
