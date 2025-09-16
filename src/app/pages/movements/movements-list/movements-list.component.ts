@@ -24,7 +24,7 @@ import { ConfirmService } from '@services/confirm.service';
 @Component({
   selector: 'app-movements-list',
   standalone: true,
-  imports: [CommonModule, SidebarComponent, HeaderComponent, ConfirmComponent, MdbFormsModule, MdbRippleModule, MdbDropdownModule, RouterLink, TableComponent, ModalAddComponent, ModalRemoveComponent],
+  imports: [CommonModule, SidebarComponent, HeaderComponent, ConfirmComponent, MdbFormsModule, MdbRippleModule, MdbDropdownModule, RouterLink, TableComponent],
   templateUrl: './movements-list.component.html',
   styleUrl: './movements-list.component.scss'
 })
@@ -37,8 +37,8 @@ export class MovementsListComponent {
   notyf: Notyf;
   resetList: boolean = false;
 
-  public headers = ["Produto", "Categoria", "Unidade", "Quantidade", "Responsável", "Data", "Movimentação"]; // Esse
-  public indexes = ["id", "product", "category", "unity", "quantity", "user", "created_at", "type", "id"]; 
+  public headers = ["Produto", "Unidade", "Quantidade", "Responsável", "Data", "Movimentação"]; // Esse
+  public indexes = ["id", "product", "unity", "quantity", "user", "created_at", "type", "id"]; 
   public data: any[];
   itemsToDelete: any[];
 

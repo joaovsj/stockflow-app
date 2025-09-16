@@ -37,7 +37,6 @@ export class ModalAddComponent {
     product_id: new FormControl(null, [Validators.required]),
     quantity: new FormControl(null, [Validators.required]),
     user_id: new FormControl({value: null, disabled: true}, [Validators.required]),
-    price: new FormControl(0, [Validators.required]),
     description: new FormControl(0, [Validators.required]),
     created_at: new FormControl({value: "", disabled: true}, [Validators.required]),
     type: new FormControl("E")
