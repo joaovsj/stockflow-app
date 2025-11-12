@@ -26,7 +26,7 @@ ng serve -o
 
 Running the container
 ```bash
-docker run -d -p 8080:80 joaovsj/stockflow-app
+docker run -d -p 8080:80 joaovsj/stockflow-app:2.0
 ```
 Or run the command in your terminal. 
 ```
