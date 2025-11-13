@@ -2,6 +2,12 @@
 
 These website brings the main features of a Stock such as register of products, categories, providers, users, movements, etc. However, the backend was developed using Laravel and it is alocatted in another repository. In addition to use properly please visit it [**here.**](https://github.com/joaovsj/stockflow-api) You can also see the image Docker available on [**Docker hub.**](https://hub.docker.com/r/joaovsj/stockflow-app)<br><br>
 
+
+
+https://github.com/user-attachments/assets/53e109dd-a70e-42f7-9dd4-39bbc0aed22b
+
+
+
 ## Technologies 🚀 
 
 - Angular 17
